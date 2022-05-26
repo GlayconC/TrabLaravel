@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'crud';
+    return view('welcome');
 });
+
+
+Route::get('/produtos', 
+    'App\Http\Controllers\ProdutosController@listagem');
