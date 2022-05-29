@@ -25,4 +25,42 @@ class PessoasController extends Controller
         }
         
     }
+
+    public function deletar($id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('pessoas.listagem')) {
+            ModelPessoas::findOrFail($id)->delete();
+
+           return redirect('/pessoas');
+        } else {
+            return 'Página não encontrada.';
+        }
+        
+    }
+
+    public function editar($id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('pessoas.listagem')) {
+            $pessoas = ModelPessoas::findOrFail($id);
+
+           return view('pessoas.edit', ['pessoas' => $pessoas]);
+        } else {
+            return 'Página não encontrada.';
+        }
+    }
+
+    public function update(Request $request) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('pessoas.listagem')) {
+            ModelPessoas::findOrFail($request->$id)->update($request->all());
+
+           return view('/pessoas');
+        } else {
+            return 'Página não encontrada.';
+        }
+    }
+
 }

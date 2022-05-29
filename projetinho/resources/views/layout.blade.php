@@ -11,7 +11,11 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
-    <a href="/produto/formulario">Cadastrar Novo Produto</a>
+    <a href="/">Home</a>
+    <a href="/pessoas">Pessoas</a>
+    <a href="/produtos">Produtos</a>
+    <a href="/cidades">Cidades</a>
+    <a href="/estados">Estados</a>
     <hr>
     <div class="container">
         @yield('conteudo')

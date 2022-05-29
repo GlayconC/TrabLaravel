@@ -21,12 +21,16 @@
         </tr>
         @foreach ($produtos as $p)
             <tr>
-                <td><a href="produto/{{$p->codigo}}">{{$p->codigo}}</a></td>
+                <td>{{$p->id}}</td>
                 <td>{{$p->nome}}</td>
-                <td>{{$p->preco}} R$</td>
+                <td>{{$p->preco}}</td>
                 <td>
-                    <a href="produto_update/{{$p->codigo}}">Editar</a>
-                    <a href="produto_delete/{{$p->codigo}}">Deletar</a>
+                    <a href="produto_update/{{$p->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
+                    <form action="produto_delete/{{$p->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash outline">Deletar</ion-icon></button>
+                    </form>
                 </td>
             </tr>
         @endforeach

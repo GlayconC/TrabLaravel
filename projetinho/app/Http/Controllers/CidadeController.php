@@ -25,4 +25,17 @@ class CidadeController extends Controller
         }
         
     }
+
+    public function deletar($id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('cidade.listagem')) {
+            ModelCidade::findOrFail($id)->delete();
+
+           return redirect('/cidades');
+        } else {
+            return 'Página não encontrada.';
+        }
+        
+    }
 }
