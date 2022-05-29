@@ -21,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/produtos', 
     'App\Http\Controllers\ProdutosController@listagem');
+
+Route::delete('/produto_delete/{id}', 
+    'App\Http\Controllers\ProdutosController@deletar');    

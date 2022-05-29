@@ -16,17 +16,21 @@
         <tr>
             <td>ID</td>
             <td>Nome</td>
-            <td>Descrição</td>
+            <td>Preço</td>
             <td>Ações</td>
         </tr>
         @foreach ($produtos as $p)
             <tr>
-                <td><a href="produto/{{$p->IDProduto}}">{{$p->IDProduto}}</a></td>
-                <td>{{$p->NomeProduto}}</td>
-                <td>{{$p->QuantidadePorUnidade}}</td>
+                <td><a href="produto/{{$p->IDProduto}}">{{$p->id}}</a></td>
+                <td>{{$p->nome}}</td>
+                <td>{{$p->preco}}</td>
                 <td>
-                    <a href="produto_update/{{$p->IDProduto}}">Editar</a>
-                    <a href="produto_delete/{{$p->IDProduto}}">Deletar</a>
+                    <a href="produto_update/{{$p->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
+                    <form action="produto_delete/{{$p->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash outline">Deletar</ion-icon></button>
+                    </form>
                 </td>
             </tr>
         @endforeach

@@ -25,4 +25,17 @@ class ProdutosController extends Controller
         }
         
     }
+
+    public function deletar($id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('produto.listagem')) {
+           Produto::findOrFail($id)->delete();
+
+           return redirect('/produtos');
+        } else {
+            return 'Página não encontrada.';
+        }
+        
+    }
 }
