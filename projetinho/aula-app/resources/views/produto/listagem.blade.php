@@ -16,12 +16,12 @@
         <tr>
             <td>ID</td>
             <td>Nome</td>
-            <td>Preço</td>
+            <td>Valor</td>
             <td>Ações</td>
         </tr>
         @foreach ($produtos as $p)
             <tr>
-                <td><a href="produto/{{$p->IDProduto}}">{{$p->id}}</a></td>
+                <td>{{$p->id}}</td>
                 <td>{{$p->nome}}</td>
                 <td>{{$p->preco}}</td>
                 <td>
