@@ -20,3 +20,12 @@ Route::get('/', function () {
 
 Route::get('/produtos', 
     'App\Http\Controllers\ProdutosController@listagem');
+
+Route::get('/cidades', 
+    'App\Http\Controllers\CidadeController@listagem');
+
+Route::get('/estados', 
+    'App\Http\Controllers\EstadosController@listagem');
+
+Route::get('/pessoas', 
+    'App\Http\Controllers\PessoasController@listagem');
