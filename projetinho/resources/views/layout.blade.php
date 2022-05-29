@@ -11,7 +11,6 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
-    <a href="/produtos">Produtos</a>
     <a href="/produto/formulario">Cadastrar Novo Produto</a>
     <hr>
     <div class="container">

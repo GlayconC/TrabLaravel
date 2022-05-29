@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Produto;
+use App\Models\ModelProdutos;
 use Log;
 
 class ProdutosController extends Controller
@@ -13,7 +13,7 @@ class ProdutosController extends Controller
         DB::connection()->enableQueryLog();
         
         if (view()->exists('produto.listagem')) {
-            $produtos = Produto::all();
+            $produtos = ModelProdutos::all();
             Log::info(
                 DB::getQueryLog()
             );

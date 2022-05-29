@@ -16,17 +16,17 @@
         <tr>
             <td>ID</td>
             <td>Nome</td>
-            <td>Descrição</td>
+            <td>Valor</td>
             <td>Ações</td>
         </tr>
         @foreach ($produtos as $p)
             <tr>
-                <td><a href="produto/{{$p->IDProduto}}">{{$p->IDProduto}}</a></td>
-                <td>{{$p->NomeProduto}}</td>
-                <td>{{$p->QuantidadePorUnidade}}</td>
+                <td><a href="produto/{{$p->codigo}}">{{$p->codigo}}</a></td>
+                <td>{{$p->nome}}</td>
+                <td>{{$p->preco}} R$</td>
                 <td>
-                    <a href="produto_update/{{$p->IDProduto}}">Editar</a>
-                    <a href="produto_delete/{{$p->IDProduto}}">Deletar</a>
+                    <a href="produto_update/{{$p->codigo}}">Editar</a>
+                    <a href="produto_delete/{{$p->codigo}}">Deletar</a>
                 </td>
             </tr>
         @endforeach

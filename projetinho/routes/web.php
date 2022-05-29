@@ -18,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/produtos', 
     'App\Http\Controllers\ProdutosController@listagem');
