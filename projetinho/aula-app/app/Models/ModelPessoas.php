@@ -9,5 +9,9 @@ class ModelPessoas extends Model
 {
 
     protected $table = 'pessoas';
+
+    protected $guarded = [];
+    
+    public $timestamps = false;
    
 }

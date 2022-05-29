@@ -5,13 +5,13 @@
 @stop
 
 @section('conteudo')
-    <form method="POST" action="/pessoas_update/{id}">
+    <form method="POST" action="/pessoas_update/{{$pessoas->id}}">
         @csrf
         @method("PUT")
-        Nome: <input type="text" name="nome" id="nome" value="{{$pessoas->nome}}">
-          Nascimento: <input type="date" name="nascimento" id="nascimento" value="{{$pessoas->nascimento}}">
-          Código do Produto: <input type="text" name="number" id="produto" value="{{$pessoas->produto}}">
-          Id da Cidade: <input type="text" name="cidade" id="cidade" value="{{$pessoas->cidade}}">
-        <input type="submit" value="Enviar">
+         <input type="text" name="nome" value="{{$pessoas->nome}}">
+           <input type="date" name="nascimento" value="{{$pessoas->nascimento}}">
+           <input type="number" name="produto" value="{{$pessoas->produto}}">
+           <input type="number" name="cidade" value="{{$pessoas->cidade}}">
+        <button type="submit"> Enviar </button>
     </form>
 @stop

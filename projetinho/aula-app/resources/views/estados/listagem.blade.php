@@ -23,7 +23,7 @@
                 <td>{{$est->sigla}}</td>
                 <td>{{$est->nome}}</td>
                 <td>
-                    <a href="estados_update/{{$est->sigla}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
+                    <a href="estados/edit/{{$est->sigla}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
                     <form action="estados_delete/{{$est->sigla}}" method="POST">
                         @csrf
                         @method('DELETE')

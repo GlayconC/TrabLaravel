@@ -38,4 +38,32 @@ class CidadeController extends Controller
         }
         
     }
+
+    public function editar($id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('cidade.listagem')) {
+            $cidades = ModelCidade::findOrFail($id);
+
+           return view('cidade.edit', ['cidades' => $cidades]);
+        } else {
+            return 'Página não encontrada.';
+        }
+    }
+
+    public function update(Request $request, $id) {
+        DB::connection()->enableQueryLog();
+        
+        if (view()->exists('cidade.listagem')) {
+
+            $cidades = ModelCidade::find($id);
+
+            $cidades->update($request->all());
+
+           return redirect('/cidades');
+        } else {
+            return 'Página não encontrada.';
+        }
+    }
+
 }

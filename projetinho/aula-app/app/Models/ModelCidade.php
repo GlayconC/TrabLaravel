@@ -9,5 +9,9 @@ class ModelCidade extends Model
 {
 
     protected $table = 'cidade';
+
+    protected $guarded = [];
+    
+    public $timestamps = false;
    
 }

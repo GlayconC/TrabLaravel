@@ -25,7 +25,7 @@
                 <td>{{$p->nome}}</td>
                 <td>{{$p->preco}}</td>
                 <td>
-                    <a href="produto_update/{{$p->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
+                    <a href="produto/edit/{{$p->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
                     <form action="produto_delete/{{$p->id}}" method="POST">
                         @csrf
                         @method('DELETE')

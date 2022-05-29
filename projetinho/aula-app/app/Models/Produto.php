@@ -12,17 +12,15 @@ class Produto extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     protected $keyType = 'integer';
-    public $timestamps = true;
-    protected $attributes = [
-        'descricao' => 'não informado',
-        'id_integracao' => 0
-    ];
+    protected $guarded = [];   
+    public $timestamps = false;
+
     protected $hidden = [
         'id_integracao',
     ];
     protected $fillable = [
         'id',
         'nome',
-        'descricao',
+        'preco'
     ];
 }

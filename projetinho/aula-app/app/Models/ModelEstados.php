@@ -9,5 +9,14 @@ class ModelEstados extends Model
 {
 
     protected $table = 'estados';
+
+    protected $guarded = [];
+    
+    public $timestamps = false;
+
+    protected $fillable = [
+        'sigla',
+        'nome'
+    ];
    
 }

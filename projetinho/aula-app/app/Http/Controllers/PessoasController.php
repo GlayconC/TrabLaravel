@@ -51,13 +51,16 @@ class PessoasController extends Controller
         }
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, $id) {
         DB::connection()->enableQueryLog();
         
         if (view()->exists('pessoas.listagem')) {
-            ModelPessoas::findOrFail($request->$id)->update($request->all());
 
-           return view('/pessoas');
+            $pessoa = ModelPessoas::find($id);
+
+            $pessoa->update($request->all());
+
+           return redirect('/pessoas');
         } else {
             return 'Página não encontrada.';
         }

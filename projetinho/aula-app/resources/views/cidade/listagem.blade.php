@@ -25,7 +25,7 @@
                 <td>{{$cid->nome}}</td>
                 <td>{{$cid->estado}}</td>
                 <td>
-                    <a href="cidade_update/{{$cid->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
+                    <a href="cidades/edit/{{$cid->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline">Editar</ion-icon></a>
                     <form action="cidade_delete/{{$cid->id}}" method="POST">
                         @csrf
                         @method('DELETE')
